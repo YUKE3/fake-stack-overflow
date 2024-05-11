@@ -1,3 +1,7 @@
+A simple mimic of the Stack Overflow Website.
+
+Full stack web application using the MERN stack.
+
 Read the Project Specfications [here](https://docs.google.com/document/d/1zZjNk9cbNLz0mp_-YtyZxhMzUph97fVgCkSE4u2k5EA/edit?usp=sharing).
 
 ![Class diagram](https://github.com/CSE-316-Software-Development/final-project-YUKE3/blob/main/images/class%20diagram.jpg?raw=true)
@@ -45,5 +49,3 @@ The Builder design pattern is used for Question, Tags, Answers, and Users.
 This design pattern is used because these objects have multiple parameters in their creation, which may or may not be optional. Using the builder design pattern, I can specify what is required, as well as provide a better label for the parameters for ease of reading the code.
 
 The builders are inside the builders folder in server.
-
-## Miscellaneous
