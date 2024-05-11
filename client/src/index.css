@@ -1,0 +1,676 @@
+/* Sorry for the horrible CSS */
+
+#root {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.welcome {
+    justify-content: center;
+    display: flex;
+}
+
+.welcome > div {
+    border: 1px black solid;
+    width: 60rem;
+    text-align: center;
+    background-color: lightgray;
+    margin-top: 20px;
+}
+.welcome > div > div > button {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding: .6rem;
+    width: 10rem;
+    background-color: lightgray;
+    border-radius: 4px;
+}
+.welcome > div > div > button:hover {
+    background-color: #0281E8;
+}
+
+:is(.login,.register) {
+    justify-content: center;
+    display: flex;
+}
+:is(.login,.register) > div {
+    border: 1px black solid;
+    background-color: lightgray;
+    width: 60rem;
+    text-align: center;
+    margin-top: 20px;
+}
+:is(.login,.register) > div > div {
+    text-align: left;
+    padding-left: 10%;
+    margin-top: .6rem;
+} 
+:is(.login,.register) > div > input {
+    width: 80%
+}
+:is(.login,.register) > div > button {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding: .6rem;
+    width: 8rem;
+    background-color: lightgray;
+    border-radius: 4px;
+    margin-top: 10px
+}
+:is(.login,.register) > div > button:hover {
+    background-color: #0281E8;
+}
+:is(.login,.register) > div > p > * {
+    color: blue;
+}
+:is(.login,.register) > div > p > *:hover {
+    color: #0281E8
+}
+:is(.login,.register) > div > #error {
+    color: red;
+    text-align: center;
+    padding: 0;
+}
+
+.navigation {
+    height: 45px;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+    width: 100%;
+    
+}
+
+.navigation > li {
+    height: 45px;
+    display: flex;
+    float: left;
+    border-bottom: black solid 1px;
+    border-right: 1px solid black;
+}
+
+.navigation > li:nth-last-child(-n+3) {
+    border-right: 0px solid black;
+}
+
+.navigation > li:nth-last-child(1) {
+    float: none;
+}
+
+.navigation > li > * {
+    display: flex;
+    height: inherit;
+    padding-inline: .5rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navigation > li > div {
+    width: 100%;
+}
+
+.navigation > li > div > input {
+    width: 100%;
+    height: 25px;
+}
+
+.navigation > li > button {
+    height: 25px;
+    margin-top: 10px;
+    margin-inline: .5rem;
+    background-color: gray;
+}
+
+.navigation > li > button:hover {
+    background-color: #0281E8;
+}
+
+.navigation > li > .selected {
+    background-color: gray;
+}
+
+.navigation > li > :is(.navButton:hover, .selected:hover) {
+    background-color: #0281E8;
+}
+
+@media (max-width: 600px) {
+    .navigation > li:nth-child(1) {
+        display: none;
+    }
+}
+
+:is(.QuestionsList, .QuestionDetails) > .PageSelector {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    height: 35px;
+    border-top: 1px black solid;
+    align-items: center;
+    justify-content: center;
+}
+
+.PageSelector > button {
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: gray;
+    margin-inline: .5rem;
+}
+
+.PageSelector > button:hover:not(:disabled) {
+    background-color: #0281E8;
+}
+
+.PageSelector {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.QuestionsListDisplay {
+    margin-top: 1px;
+    background-color: white;
+    display: block;
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+.QuestionsListDisplay > tbody > tr > td:first-child {
+    width: 6rem;
+    font-size: .9rem;
+    text-align: right;
+}
+.QuestionsListDisplay > thead > tr > td:nth-child(2) {
+    text-align: center;
+    font-weight: bold;
+}
+.QuestionsListDisplay > thead > tr > td:nth-child(1) {
+    text-align: right;
+    font-weight: bold;
+}
+.QuestionsListDisplay > :is(tbody, thead) > tr > td:nth-child(2) {
+    padding-inline: 10px;
+    width: calc(100vw - 16rem);
+}
+.QuestionsListDisplay > tbody > tr > td:last-child {
+    width: 9rem;
+    font-size: .9rem;
+}
+.QuestionsListDisplay > tbody > tr > td {
+    border-top: 1px black solid;
+}
+.QuestionsListDisplay {
+    border-collapse: collapse;
+}
+.QuestionsListDisplay > tbody > tr > td:first-child > div:nth-child(even) {
+    float: right;
+    text-align: left;
+    width: 3rem;
+}
+.QuestionsListDisplay > tbody > tr > td:first-child > div:nth-child(odd) {
+    float: left;
+    width: 2.5rem;
+}
+.QuestionsListDisplay > tbody > tr > td:nth-child(2) > div > * {
+    color: blue;
+}
+.QuestionsListDisplay > tbody > tr > td:nth-child(2) > div > *:hover {
+    color: #0281E8;
+}
+.QuestionsListDisplay > tbody > tr > .noquestion {
+    text-align: center;
+    font-weight: bold;
+}
+
+.IndividualTag {
+    background-color: gray;
+    margin-inline: 3px;
+    border-radius: 3px;
+}
+
+.IndividualTag:hover {
+    background-color: #0281E8;
+}
+
+.TimeUserDisplay > div:nth-child(1) > span {
+    color: #165A92;
+}
+.TimeUserDisplay > div:nth-child(2) > span {
+    color: darkgreen;
+}
+.TimeUserDisplay > div:nth-child(3) > span {
+    color: darkcyan;
+}
+
+.QuestionDetails > table {
+    margin-top: 1px;
+    background-color: white;
+    display: block;
+    height: calc(100vh - 80px);
+    overflow: auto;
+    border-collapse: collapse;
+}
+.QuestionDetails > table > thead > tr > td:first-child {
+    width: 6rem;
+    font-size: .9rem;
+    text-align: right;
+}
+.QuestionDetails > table > thead > tr > td:nth-child(2) {
+    width: calc(100vw - 16rem);
+    padding-inline: 10px;
+}
+.QuestionDetails > table > thead > tr:first-child > td:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.QuestionDetails > table > thead > tr:last-child > td:nth-child(2) {
+    text-align: left;
+    font-size: 1rem;
+}
+.QuestionDetails > table > thead > tr > td:last-child {
+    width: 10rem;
+    font-size: .9rem;
+    text-align: right;
+}
+.QuestionDetails > table > thead > tr > td:first-child > div:nth-child(even) {
+    float: right;
+    text-align: left;
+    width: 3rem;
+}
+.QuestionDetails > table > thead > tr > td:first-child > div:nth-child(odd) {
+    float: left;
+    width: 2.5rem;
+}
+.QuestionDetails > table > thead > tr > td:last-child {
+    text-align: left;
+}
+.QuestionDetails > table {
+    padding-top: 10px;
+}
+.QuestionDetails > table > thead > tr:last-child {
+    border-bottom: 1px black solid;
+}
+.QuestionDetails > table > tbody > tr > td:last-child {
+    font-size: .9rem;
+    text-align: left;
+}
+.QuestionDetails > table > tbody > tr > td:nth-child(2) {
+    padding-inline: 10px;
+}
+.QuestionDetails > table > tbody > tr > td:first-child {
+    width: 6rem;
+    font-size: .9rem;
+    text-align: center;
+}
+.QuestionDetails > table > tbody > tr > td {
+    border-bottom: 1px dotted black;
+}
+.QuestionDetails > table > tbody > tr:first-child > td {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 1px solid black;
+}
+.QuestionDetails > table > tbody > tr:last-child > td > button {
+    background-color: gray;
+    height: 4rem;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.QuestionDetails > table > tbody > tr:last-child > td > button:hover {
+    background-color: #0281E8;
+}
+
+.AskQuestion {
+    margin-top: 1px;
+    width: 79vw;
+    background-color: white;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    /* height: calc(100vh - 80px + 34px); */
+}
+.AskQuestion > div {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.AskQuestion > input {
+    width: 79vw;
+    height: 30px;
+}
+.AskQuestion > textarea {
+    width: 79vw;
+    resize: none;
+    font-family: inherit;
+}
+.AskQuestion > #qstn_summary {
+    height: 80px;
+}
+.AskQuestion > #qstn_text {
+    height: 200px;
+}
+.AskQuestion > #qstn_tags {
+    height: 80px;
+}
+.AskQuestion > div > button {
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    border-radius: 1px;
+    background-color: gray;
+    margin-inline: 10px;
+}
+.AskQuestion > div > button:hover {
+    background-color: #0281E8;
+}
+.AskQuestion > div:first-child {
+    color: red;
+}
+
+.UserProfile > .QuestionsListDisplay > thead > tr > td:nth-child(2){
+    width: calc(60vw - 16rem);
+}
+.UserProfile > .QuestionsListDisplay > tbody > tr > td:nth-child(2){
+    width: calc(60vw - 16rem);
+}
+.UserProfile > .PageSelector {
+    width: 60vw;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    background-color: lightgray;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.UserProfile > div > .PageSelector {
+    width: 39.9vw;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: lightgray;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.UserProfileTable {
+    width: 40vw;
+    height: calc(100vh - 80px);
+    background-color: white;
+    float: right;
+    border-left: 1px black solid;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 45px;
+    border-collapse: collapse;
+}
+.UserProfileTable > tbody > tr:first-child > td {
+    height: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+.UserProfileTable > tbody > tr:nth-child(2) > td {
+    height: 1.3rem;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    border-bottom: 1px black solid;
+    text-align: center;    
+}
+.UserProfileTable > tbody > tr:nth-child(4) > td > p {
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+}
+.UserProfileTable > tbody > tr:nth-child(3) > td {
+    height: 1.3rem;
+    font-size: 1.1rem;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px black solid;
+}
+.UserProfileTable > tbody > tr:nth-child(4) > td {
+    height: 200px;
+    border-bottom: 1px solid black;
+}
+.UserProfileTable > tbody > tr:nth-child(5) > td {
+    height: 1.3rem;
+    font-size: 1.1rem;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px black solid;
+}
+.UserProfileTable > tbody > .AnswerRow > td:first-child{
+    font-size: .9rem;
+}
+.UserProfileTable > tbody > .AnswerRow > td:last-child {
+    font-size: .9rem;
+    width: 10rem;
+}
+.UserProfileTable > tbody > .AnswerRow > td {
+    border-top: 1px dotted black;
+}
+.UserProfileTable > tbody > .AnswerRow > td:nth-child(2) > p > * {
+    color: blue;
+}
+.UserProfileTable > tbody > .AnswerRow > td:nth-child(2) > p > *:hover {
+    color: #0281E8;
+}
+.UserProfile > .QuestionsListDisplay {
+    width: 60vw;
+    display: inline-block;
+    position: fixed;
+    left: 0;
+}
+
+.Comments > div:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+.Comments > div:last-child {
+    text-align: right;
+}
+.Comments > div > div:nth-child(odd) {
+    text-align: left;
+    padding-top: 5px;
+}
+.Comments > div > div:nth-child(even) {
+    text-align: right;
+    border-bottom: dotted 1px black;
+    color: darkcyan;
+}
+.Comments > div > div {
+    font-size: .85rem;
+}
+.Comments > input {
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 25px;
+    width: 90%;
+}
+.Comments > button {
+    width: 5%;
+    height: 25px;
+    background-color: gray;
+}
+.Comments > button:hover {
+    background-color: #0281E8;
+    border-radius: 2px;
+}
+
+.AnswerQuestion {
+    width: 79vw;
+    margin-top: 1px;
+    margin-left: 10vw;
+}
+.AnswerQuestion > :first-child {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+.AnswerQuestion > div:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    text-align: center;
+}
+.AnswerQuestion > textarea {
+    margin-top: 20px;
+    width: 79vw;
+    resize: none;
+    height: 200px;
+    font-family: inherit;
+}
+.AnswerQuestion > div:nth-child(4) {
+    text-align: center;
+}
+.AnswerQuestion > div > button {
+    margin-top: 20px;
+    background-color: gray;
+    width: 8rem;
+    font-size: 1.2rem;
+    height: 3rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-inline: 10px
+}
+.AnswerQuestion > div > button:hover {
+    background-color: #0281E8;
+}
+
+:is(.upvote, .upvoted) {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+.upvoted {
+    border: solid orangered;
+    border-width: 0 3px 3px 0;
+}
+:is(.downvoted, .downvote) {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.downvoted {
+    border: solid blue;
+    border-width: 0 3px 3px 0;
+}
+.UpvoteDownvote > div {
+    width: 5rem;
+}
+
+.IndividualTagContainer {
+    border: 1px solid black;
+    width: 15rem;
+    height: 7rem;
+    display: inline-block;
+    margin-inline: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.IndividualTagContainer > .IndividualTag{
+    margin-bottom: 20px;
+}
+
+.IndividualTagContainer > .IndividualTag {
+    height: 2rem;
+    width: 80%;
+    margin-inline: 10%;
+    font-size: 1.2rem;
+}
+
+.TagsList > div {
+    margin-top: 1px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.TagsList > .TagDisplay {
+    text-align: center;
+}
+
+.noansrow {
+    text-align: center;
+    height: 100%;
+}
+
+.TagEdit > div > * {
+    width: 80%;
+    margin-left: 10%;
+}
+.TagEdit > div > :first-child {
+    color: red;
+}
+.TagEdit > div > :nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+.TagEdit > div > textarea {
+    font-family: inherit;
+    resize: none;
+    height: 80px;
+}
+.TagEdit > div > div {
+    text-align: center;
+    margin-top: 20px;
+}
+.TagEdit > div > div > button {
+    width: 200px;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: gray;
+}
+.TagEdit > div > div > button:hover {
+    background-color: #0281E8;
+}
