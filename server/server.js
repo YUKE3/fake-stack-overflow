@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
 
-const mongoDB_url = 'mongodb://localhost:27017/fake_so'
+const mongoDB_url = 'mongodb://fso-mongodb:27017/fake_so'
 const port = 8000
 const saltRounds = 10
 
@@ -37,7 +37,8 @@ db.on('connected', function() {
     }))
     app.use(express.json())
     app.use(session({
-        secret: process.env.SECRET,
+        // secret: process.env.SECRET,
+        secret: "placehold",
         resave: false,
         saveUninitialized: true,
         cookie: {},

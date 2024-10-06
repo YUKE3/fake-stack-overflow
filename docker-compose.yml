@@ -1,0 +1,38 @@
+version: '3'
+services:
+  client:
+    image: yuke3/fso-client
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - '3000:3000'
+    networks:
+      - fso-network
+
+  server:
+    image: yuke3/fso-server
+    container_name: fso-server
+    ports:
+      - '8000:8000'
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    depends_on:
+      - mongodb_service
+    restart: always
+    networks:
+      - fso-network
+  mongodb_service:
+    image: mongo
+    container_name: fso-mongodb
+    ports:
+      - '27017:27017'
+    restart: always
+    networks:
+      - fso-network
+
+networks:
+  fso-network:
+    driver: bridge
