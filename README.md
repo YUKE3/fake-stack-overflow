@@ -8,6 +8,12 @@ Read the Project Specfications [here](https://docs.google.com/document/d/1zZjNk9
 
 ## Instructions to setup and run project
 
+#### With Docker:
+
+Run `docker-compose up -d` from project root.
+
+#### With Node on system:
+
 Running the server: 
 
     cd ./server
